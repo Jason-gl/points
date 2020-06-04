@@ -1,6 +1,6 @@
 <style lang="less">
-@import"../colorui/main.wxss";
-@import"../colorui/icon.wxss";
+@import"static/colorui/main.wxss";
+@import"static/colorui/icon.wxss";
 
 .container {
   height: 30%;

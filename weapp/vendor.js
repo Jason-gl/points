@@ -34,7 +34,7 @@ var process = { env: {} };
    return __wepy_require;
 })([
 /***** module 0 start *****/
-/***** /home/Jason/Points/myproj/node_modules/regenerator-runtime/runtime.js *****/
+/***** D:\GitHub\points\node_modules\regenerator-runtime\runtime.js *****/
 function(module, exports, __wepy_require) {/**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -769,7 +769,7 @@ try {
 
 
 /***** module 1 start *****/
-/***** /home/Jason/Points/myproj/node_modules/@wepy/core/dist/wepy.js *****/
+/***** D:\GitHub\points\node_modules\@wepy\core\dist\wepy.js *****/
 function(module, exports, __wepy_require) {'use strict';
 
 // can we use __proto__?
