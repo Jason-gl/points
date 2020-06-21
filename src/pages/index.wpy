@@ -56,86 +56,10 @@ const getTime = (time) => {
 module.exports.getTime = getTime;
 </wxs>
 <template>
-  <div class="container">
-    <div class="userinfo" @tap="handleViewTap">
-      <image class="userinfo-avatar" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
-      <div class="userinfo-nickname">{{ userInfo.nickName }}</div>
-    </div>
-
-    <panel>
-      <div class="title" slot="title">测试数据绑定</div>
-
-      <text class="info" @tap="currentTime = +new Date()">{{m1.getTime(currentTime)}}</text>
-      <text class="info">{{setTimeoutTitle}}</text>
-      <text class="info" @tap="mixintap">{{mixin}}</text>
-      <text class="info">{{testcomputed}}</text>
-    </panel>
-
-    <panel>
-      <div class="title" slot="title">其它测试</div>
-      <!--button @tap="toast" size="mini">第三方组件</button-->
-      <button @tap="communicate" size="mini">组件通信</button>
-      <button @tap="tap" size="mini">混合TAP事件</button>
-    </panel>
-
-    <panel>
-      <div class="title" slot="title">测试并发网络请求</div>
-      <div>返回结果: <text>{{netrst}}</text></div>
-      <button @tap="request" size="mini"> 点我发起10个请求 </button>
-    </panel>
-
-     <panel>
-       <div class="title" slot="title">测试 v-model</div>
-       <div style="display: flex; align-items: center;">
-         <input v-model="inputmodel" />
-         <text style="margin-left: 30rpx;">Value: {{inputmodel}}</text>
-       </div>
-     </panel>
-
-    <panel>
-      <div class="title" slot="title">测试组件</div>
-
-      <text class="testcounter">全局计数器：</text>
-      <div class="counterview">
-        <button @tap="mynum++" size="mini">全局计数器: {{mynum}}</button>
-      </div>
-
-      <text class="testcounter">计数组件1 - num: </text>
-      <div class="counterview">
-
-        <counter @index-emit.user="counterEmit" />
-      </div>
-
-      <text class="testcounter">计数组件2 - num.sync: </text>
-
-      <div class="counterview">
-        <counter :num.sync="mynum"></counter>
-      </div>
-    </panel>
-
-    <panel>
-      <div class="title" slot="title">测试组件Repeat</div>
-      <div v-for="(item, index) in groupList">
-        <group :grouplist="item" :index="index"></group>
-      </div>
-    </panel>
-
-    <panel>
-      <div class="title" slot="title">测试列表</div>
-      <list></list>
-    </panel>
-
-    <panel>
-      <div class="title" slot="title">测试引用第三方原生组件</div>
-      <slide-view class="slide" width="640" height="80" slideWidth="266">
-        <view class="left" slot="left">这是一个原生组件，右滑试试看。</view>
-        <view class="right" slot="right">
-          <view class="right-item">删除</view>
-        </view>
-      </slide-view>
-     </panel>
-    <!--toast /-->
-  </div>
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+	<view slot="backText">返回</view>
+	<view slot="content">导航栏</view>
+</cu-custom>
 </template>
 
 <script>
@@ -301,11 +225,7 @@ module.exports.getTime = getTime;
 {
     navigationBarTitleText: 'WePY 2.0 Feature Demo',
     usingComponents: {
-      panel: '~@/components/panel',
-      counter: '~counter',
-      list: '../components/list',
-      group: '../components/group',
-      "slide-view": "module:miniprogram-slide-view",
+      "cu-custom":"static/colorui/components/cu-custom"
     }
 }
 </config>

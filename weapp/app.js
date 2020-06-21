@@ -25,16 +25,15 @@ _core["default"].app({
     userInfo: null
   },
   onLaunch: function onLaunch() {
-    this.testAsync();
+    var _this = this;
 
-    _eventHub["default"].$on('app-launch', function () {
-      console.log('app-launch event emitted, the params are:');
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
+    wx.getSystemInfo({
+      success: function success(e) {
+        _this.globalData.StatusBar = e.statusBarHeight;
+        var custom = wx.getMenuButtonBoundingClientRect();
+        _this.globalData.Custom = custom;
+        _this.globalData.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
       }
-
-      console.log(args);
     });
   },
   methods: {
@@ -46,7 +45,7 @@ _core["default"].app({
       });
     },
     testAsync: function testAsync() {
-      var _this = this;
+      var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime2["default"].mark(function _callee() {
         var d;
@@ -55,7 +54,7 @@ _core["default"].app({
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return _this.sleep(3);
+                return _this2.sleep(3);
 
               case 2:
                 d = _context.sent;
@@ -70,4 +69,4 @@ _core["default"].app({
       }))();
     }
   }
-}, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {}, refs: undefined }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {}, refs: undefined }, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {}, refs: undefined });
+}, {info: {"noPromiseAPI":["createSelectorQuery"]}, handlers: {}, models: {}, refs: undefined });
