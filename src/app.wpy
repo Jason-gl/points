@@ -1,6 +1,6 @@
 <style lang="less">
-@import "static/colorui/main.wxss";
-@import "static/colorui/icon.wxss";
+@import"static/colorui/main.wxss";
+@import"static/colorui/icon.wxss";
 
 .container {
   height: 30%;
@@ -11,6 +11,7 @@
   box-sizing: border-box;
 }
 </style>
+
 
 <script>
 import wepy from '@wepy/core';
