@@ -1,4 +1,6 @@
-const app = getApp();
+"use strict";
+
+var app = getApp();
 Component({
   /**
    * 组件的一些选项
@@ -7,27 +9,29 @@ Component({
     addGlobalClass: true,
     multipleSlots: true
   },
+
   /**
    * 组件的对外属性
    */
   properties: {
     bgColor: {
       type: String,
-      default: ''
-    }, 
+      "default": ''
+    },
     isCustom: {
       type: [Boolean, String],
-      default: false
+      "default": false
     },
     isBack: {
       type: [Boolean, String],
-      default: false
+      "default": false
     },
     bgImage: {
       type: String,
-      default: ''
-    },
+      "default": ''
+    }
   },
+
   /**
    * 组件的初始数据
    */
@@ -36,19 +40,20 @@ Component({
     CustomBar: app.globalData.CustomBar,
     Custom: app.globalData.Custom
   },
+
   /**
    * 组件的方法列表
    */
   methods: {
-    BackPage() {
+    BackPage: function BackPage() {
       wx.navigateBack({
         delta: 1
       });
     },
-    toHome(){
+    toHome: function toHome() {
       wx.reLaunch({
-        url: '/pages/index/index',
-      })
+        url: '/pages/index/index'
+      });
     }
   }
-})
+});
