@@ -4,8 +4,8 @@
     "usingComponents": {
         "list": "./../components/wepy-list",
         "group": "./../components/group",
-        "counter": "./../components/counter",
         "panel": "./../components/panel",
+        "counter": "./../components/counter",
         "slide-view": "./../$vendor/miniprogram-slide-view/miniprogram_dist/index"
     }
 }
